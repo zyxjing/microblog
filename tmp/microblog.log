@@ -1,0 +1,1378 @@
+2018-04-02 09:10:57,107 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 09:11:08,821 ERROR: Exception on /user/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1610, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1831, in preprocess_request
+    rv = func()
+  File "f:\microblog\app\views.py", line 23, in before_request
+    if g.user.is_authenticated():
+TypeError: 'bool' object is not callable
+2018-04-02 09:14:09,031 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 09:25:25,888 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 09:54:20,810 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 09:54:44,050 ERROR: Exception on /edit [POST] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 135, in edit
+    if form.validate_on_submit():
+  File "f:\microblog\flask\lib\site-packages\flask_wtf\form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "f:\microblog\app\forms.py", line 23, in validate
+    user = User.query.filter_by(nickname=self.nickname.data).first()
+NameError: name 'User' is not defined
+2018-04-02 09:55:52,397 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 10:45:35,920 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 10:46:13,290 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 11:06:31,326 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 11:07:13,278 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 12:06:13,119 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 12:06:35,943 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 12:10:05,506 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 13:32:12,921 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 13:32:17,808 ERROR: Exception on /user/zhaoyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1610, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1831, in preprocess_request
+    rv = func()
+  File "f:\microblog\app\views.py", line 23, in before_request
+    if g.user.is_authenticated:
+  File "f:\microblog\flask\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "f:\microblog\flask\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "f:\microblog\flask\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "f:\microblog\app\views.py", line 85, in load_user
+    return User.query.get(int(id))
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 882, in get
+    ident, loading.load_on_ident)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 916, in _get_impl
+    return fallback_fn(self, key)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\loading.py", line 232, in load_on_ident
+    return q.one()
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2848, in one
+    ret = self.one_or_none()
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2818, in one_or_none
+    ret = list(self)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.nickname AS user_nickname, user.email AS user_email, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (1,)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-04-02 13:34:16,633 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 13:34:18,049 ERROR: Exception on /login [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1610, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1831, in preprocess_request
+    rv = func()
+  File "f:\microblog\app\views.py", line 23, in before_request
+    if g.user.is_authenticated:
+  File "f:\microblog\flask\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
+    return self.__local()
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "f:\microblog\flask\lib\site-packages\flask_login\login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "f:\microblog\flask\lib\site-packages\flask_login\login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "f:\microblog\app\views.py", line 85, in load_user
+    return User.query.get(int(id))
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 882, in get
+    ident, loading.load_on_ident)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 916, in _get_impl
+    return fallback_fn(self, key)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\loading.py", line 232, in load_on_ident
+    return q.one()
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2848, in one
+    ret = self.one_or_none()
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2818, in one_or_none
+    ret = list(self)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2889, in __iter__
+    return self._execute_and_instances(context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\query.py", line 2912, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 948, in execute
+    return meth(self, multiparams, params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\sql\elements.py", line 269, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1060, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1200, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1413, in _handle_dbapi_exception
+    exc_info
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\base.py", line 1193, in _execute_context
+    context)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\engine\default.py", line 507, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.nickname AS user_nickname, user.email AS user_email, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.id = ?'] [parameters: (1,)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2018-04-02 13:36:24,048 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 13:36:39,202 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:15:33,726 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:21:25,566 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:23:53,503 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:33:30,361 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:34:36,712 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:34:45,473 ERROR: Exception on /allBlogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 202, in allBlogs
+    posts = Post.all_blogs()
+TypeError: all_blogs() missing 1 required positional argument: 'self'
+2018-04-02 15:35:56,344 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:35:58,545 ERROR: Exception on /allBlogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 203, in allBlogs
+    return render_template('user.html', posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "f:\microblog\app\templates\user.html", line 7, in block "content"
+    <td><img src='{{user.avatar(128)}}'></td>
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-04-02 15:37:40,789 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:38:02,055 ERROR: Exception on /allBlogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 203, in allBlogs
+    return render_template('user.html', posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\user.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "f:\microblog\app\templates\user.html", line 7, in block "content"
+    <td><img src='{{user.avatar(128)}}'></td>
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-04-02 15:39:00,540 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:39:46,368 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:39:55,247 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 107, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 12, in top-level template code
+    | <a href="{{ url_for('blogs') }}">ALL Blogs</a>
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'blogs'. Did you mean 'allBlogs' instead?
+2018-04-02 15:40:31,925 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:40:36,624 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 107, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 12, in top-level template code
+    | <a href="{{ url_for('blogs') }}">ALL Blogs</a>
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'blogs'. Did you mean 'allBlogs' instead?
+2018-04-02 15:41:45,735 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:43:31,696 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 15:57:34,403 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:01:01,583 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:01:49,567 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:03:20,678 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:03:46,991 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:05:09,469 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:12:00,147 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:12:43,963 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:13:26,408 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 154, in follow
+    if user is None():
+TypeError: 'NoneType' object is not callable
+2018-04-02 16:13:59,429 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:14:22,171 ERROR: Exception on /follow/lhy [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 154, in follow
+    if user is None():
+TypeError: 'NoneType' object is not callable
+2018-04-02 16:17:33,596 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:18:39,209 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 154, in follow
+    if user is None():
+TypeError: 'NoneType' object is not callable
+2018-04-02 16:19:09,621 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:29:20,721 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:40:23,465 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:42:48,137 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:42:52,659 ERROR: Exception on /followers/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 213, in followers
+    followers = g.user.all_followers(nickname)
+  File "f:\microblog\app\models.py", line 108, in all_followers
+    return User.query.join(followers,(followers.c.follower_id == User.user_id)).filter(User.nickname == nickname).order_by(User.id.desc())
+AttributeError: type object 'User' has no attribute 'user_id'
+2018-04-02 16:43:11,176 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:43:43,863 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:44:18,223 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:48:08,149 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:51:28,636 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:53:14,141 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 16:53:38,540 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 17:46:33,792 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 17:47:38,398 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 17:56:39,493 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 17:57:00,328 ERROR: Exception on /blogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 213, in blogs
+    posts = Post.all_blogs().paginate(page, POSTS_PER_PAGE, False)
+AttributeError: 'list' object has no attribute 'paginate'
+2018-04-02 17:57:21,434 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:06:25,011 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:06:37,430 ERROR: Exception on /blogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 214, in blogs
+    return render_template('blogs.html', posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\blogs.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 29, in top-level template code
+    {% block content %}{% endblock %}
+  File "f:\microblog\app\templates\blogs.html", line 12, in block "content"
+    {% if posts.has_next %}<a href="{{url_for('user', nickname = user.nickname, page = posts.next_num)}}">Older posts >></a>{% else %}Older posts >>{% endif %}
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-04-02 18:08:20,458 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:12:29,694 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:13:43,046 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:14:48,483 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:16:49,163 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:17:35,225 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:18:03,420 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:19:52,104 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:20:52,201 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:40:11,390 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:40:27,442 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 18:45:19,085 INFO: microblog startup [in F:\microblog\app\__init__.py:40]
+2018-04-02 19:15:39,987 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 19:15:49,455 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 19:16:04,857 ERROR: Exception on /search_results/six [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS).all()
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2018-04-02 19:31:29,863 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 19:32:32,585 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS)
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2018-04-02 19:37:19,513 INFO: microblog startup [in F:\microblog\app\__init__.py:40]
+2018-04-02 19:44:43,580 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 19:44:57,474 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS)
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2018-04-02 20:00:20,547 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:00:53,211 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = Post.query.whoosh_search(query, MAX_SEARCH_RESULTS)
+AttributeError: 'BaseQuery' object has no attribute 'whoosh_search'
+2018-04-02 20:24:38,586 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:25:04,238 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:25:23,690 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:25:33,905 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = search.whoosh_search(Post, query = query, fields = ['title'], limit = 20)
+AttributeError: 'function' object has no attribute 'whoosh_search'
+2018-04-02 20:26:23,065 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:26:27,526 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 239, in search_results
+    results = search.whoosh_search(Post, query = query, fields = ['title'], limit = 20)
+AttributeError: 'function' object has no attribute 'whoosh_search'
+2018-04-02 20:29:44,178 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:30:28,067 ERROR: Exception on /search_results/first [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 240, in search_results
+    results = Post.query.msearch(query, field = ['body'], limit = 20)
+TypeError: msearch() got an unexpected keyword argument 'field'
+2018-04-02 20:30:52,355 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:32:05,216 INFO: microblog startup [in f:\microblog\app\__init__.py:40]
+2018-04-02 20:43:04,283 INFO: microblog startup [in F:\microblog\app\__init__.py:40]
+2018-04-02 21:12:07,166 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-02 21:12:31,305 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-02 21:20:03,398 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-02 21:20:53,483 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-02 21:21:28,826 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 08:55:12,784 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:03:52,541 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:05:08,295 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:05:08,332 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:15:58,130 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:18:21,449 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:20:01,284 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:30:04,292 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:35:08,130 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:36:54,601 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 09:49:48,987 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:02:50,450 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:09:09,369 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:18:23,958 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:18:59,182 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:19:42,932 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:21:49,554 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:27:21,052 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:28:03,380 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:33:21,971 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:33:32,269 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 186, in follow
+    follower_notification(user, g.user)
+  File "f:\microblog\app\emails.py", line 33, in follower_notification
+    From = _format_addr(u'Microblog admin <%s>' % ADMINS[0])
+  File "f:\microblog\app\emails.py", line 23, in _format_addr
+    name, addr = parseaddr(s)
+NameError: name 'parseaddr' is not defined
+2018-04-03 10:34:09,418 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:34:19,058 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 186, in follow
+    follower_notification(user, g.user)
+  File "f:\microblog\app\emails.py", line 34, in follower_notification
+    From = _format_addr(u'Microblog admin <%s>' % ADMINS[0])
+  File "f:\microblog\app\emails.py", line 26, in _format_addr
+    Header(name, 'utf-8').encode(), \
+NameError: name 'Header' is not defined
+2018-04-03 10:34:44,518 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:35:15,955 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 186, in follow
+    follower_notification(user, g.user)
+  File "f:\microblog\app\emails.py", line 36, in follower_notification
+    From = _format_addr(u'Microblog admin <%s>' % ADMINS[0])
+  File "f:\microblog\app\emails.py", line 29, in _format_addr
+    addr.encode('utf-8') if isinstance(addr, unicode) else addr))
+NameError: name 'unicode' is not defined
+2018-04-03 10:36:35,631 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:36:44,447 ERROR: Exception on /follow/zyx [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 186, in follow
+    follower_notification(user, g.user)
+  File "f:\microblog\app\emails.py", line 36, in follower_notification
+    From = _format_addr(u'Microblog admin <%s>' % ADMINS[0])
+  File "f:\microblog\app\emails.py", line 29, in _format_addr
+    addr.encode('utf-8') if isinstance(addr, str) else addr))
+  File "d:\python36-32\Lib\email\utils.py", line 91, in formataddr
+    address.encode('ascii')
+AttributeError: 'bytes' object has no attribute 'encode'
+2018-04-03 10:37:27,695 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:49:02,815 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:49:54,965 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:50:55,819 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 10:51:41,809 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:02:24,601 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:03:01,632 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:08:11,206 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:09:40,276 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:13:24,559 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:20:26,258 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:22:12,568 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:26:34,756 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 11:27:18,256 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:01:02,368 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:42:07,149 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:42:22,606 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 119, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "f:\microblog\app\templates\base.html", line 32, in block "navbar"
+    {% if not user.is_anonymous %}
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'user' is undefined
+2018-04-03 12:42:56,608 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:43:01,615 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 119, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "f:\microblog\app\templates\base.html", line 55, in block "content"
+    {% block app_content %}{% endblock %}
+  File "f:\microblog\app\templates\index.html", line 26, in block "app_content"
+    {{ wtf.quick_form(form) }}
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'wtf' is undefined
+2018-04-03 12:43:54,748 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:49:16,234 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:51:43,996 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:53:11,555 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:53:15,469 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 119, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\app\templates\base.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "f:\microblog\app\templates\base.html", line 37, in block "navbar"
+    <li><a class="navbar-brand" href="{{ url_for('user', username=t.user.nickname) }}">Profile</a></li>
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 't' is undefined
+2018-04-03 12:53:35,640 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:53:41,663 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 119, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\app\templates\base.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "f:\microblog\app\templates\base.html", line 37, in block "navbar"
+    <li><a class="navbar-brand" href="{{ url_for('user', username=g.user.nickname) }}">Profile</a></li>
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you forget to specify values ['nickname', 'page']?
+2018-04-03 12:54:25,230 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:54:28,164 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 119, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\app\templates\base.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 21, in block "body"
+    {% block navbar %}
+  File "f:\microblog\app\templates\base.html", line 37, in block "navbar"
+    <li><a class="navbar-brand" href="{{ url_for('user', username = g.user.nickname, page = 1) }}">Profile</a></li>
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['page', 'username']. Did you forget to specify values ['nickname']?
+2018-04-03 12:54:49,537 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:56:50,665 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 12:56:56,638 ERROR: Exception on /user/lhy/1 [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 144, in user
+    return render_template('user.html', user = user, posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+jinja2.exceptions.TemplateRuntimeError: extended multiple times
+2018-04-03 13:39:04,941 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:40:29,458 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:41:44,288 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:41:48,683 ERROR: Exception on /index [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 134, in index
+    posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\app\templates\base.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "f:\microblog\app\templates\base.html", line 59, in block "content"
+    {% block app_content %}{% endblock %}
+  File "f:\microblog\app\templates\index.html", line 13, in block "app_content"
+    {% include 'post.html' %}
+  File "f:\microblog\app\templates\post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "f:\microblog\flask\lib\site-packages\werkzeug\routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you forget to specify values ['nickname', 'page']?
+2018-04-03 13:44:31,919 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:45:32,719 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:47:00,943 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:47:11,092 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:48:55,723 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:51:02,921 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:52:02,549 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:54:11,300 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:58:47,159 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 13:59:51,347 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:04:44,070 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:05:49,707 ERROR: Exception on /login [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1772, in add
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_openid.py", line 507, in decorated
+    openid_response, self.extension_responses))
+  File "f:\microblog\app\views.py", line 91, in after_login
+    db.session.add(user.follow(user))
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1774, in add
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2018-04-03 14:08:15,070 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:09:00,685 ERROR: Exception on /login [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1772, in add
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_openid.py", line 507, in decorated
+    openid_response, self.extension_responses))
+  File "f:\microblog\app\views.py", line 92, in after_login
+    db.session.add(u)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1774, in add
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2018-04-03 14:09:07,892 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:11:56,915 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:14:53,998 ERROR: Exception on /login [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1772, in add
+    state = attributes.instance_state(instance)
+AttributeError: 'NoneType' object has no attribute '_sa_instance_state'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_openid.py", line 507, in decorated
+    openid_response, self.extension_responses))
+  File "f:\microblog\app\views.py", line 92, in after_login
+    db.session.add(u)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 153, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\sqlalchemy\orm\session.py", line 1774, in add
+    raise exc.UnmappedInstanceError(instance)
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
+2018-04-03 14:15:33,539 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:27:49,721 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:28:16,883 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:28:56,465 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:29:01,814 ERROR: Exception on /blogs [GET] [in f:\microblog\flask\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "f:\microblog\flask\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "f:\microblog\flask\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "f:\microblog\app\views.py", line 243, in blogs
+    return render_template('blogs.html', posts = posts)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "f:\microblog\flask\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "f:\microblog\flask\lib\site-packages\jinja2\asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "f:\microblog\flask\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "f:\microblog\app\templates\blogs.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "f:\microblog\app\templates\base.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "f:\microblog\flask\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "f:\microblog\app\templates\base.html", line 58, in block "content"
+    {% block app_content %}{% endblock %}
+  File "f:\microblog\app\templates\blogs.html", line 6, in block "app_content"
+    {% if not post.items %}
+  File "f:\microblog\flask\lib\site-packages\jinja2\environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2018-04-03 14:30:00,266 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:41:15,769 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:42:49,889 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:45:03,320 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 14:45:16,688 INFO: microblog startup [in f:\microblog\app\__init__.py:39]
+2018-04-03 15:00:34,924 INFO: microblog startup [in f:\microblog\app\__init__.py:39]

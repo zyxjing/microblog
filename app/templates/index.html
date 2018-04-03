@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+    <h1>Hi, {{g.user.nickname}}</h1>
+    
+    {% if form %}
+        {{ wtf.quick_form(form) }}
+    <br>
+    {% endif %}
+    
+    {% for post in posts.items %}
+        {% include 'post.html' %}
+    {% endfor %}
+
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous">
+                <a href="{{ url_for('index', page = 1) }}">
+                    <span aria-hidden="true">&larr;</span>第一页
+                </a>
+            </li>
+            <li class="previous{% if not posts.has_prev %} disabled{% endif %}">
+                <a href="{{ url_for('index', page = posts.prev_num) }}">
+                    <span aria-hidden="true">&larr;</span>上一页
+                </a>
+            </li>
+            <li class="next">
+                <a href="{{ url_for('index', page = posts.pages) }}">
+                    最后一页<span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+            <li class="next{% if not posts.has_next %} disabled{% endif %}">
+                <a href="{{ url_for('index', page = posts.next_num) }}">
+                    下一页<span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
