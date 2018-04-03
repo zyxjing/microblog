@@ -10,8 +10,21 @@
                 {{ post.author.nickname }}
             </a>
             says:
-            <br>
-            {{ post.body }}
+            <b>{{post.title}}</b>
+            <br><br>
+            {{ post.body | truncate(100, True) }}
         </td>
+        <td width="70px">
+            <a href="{{ url_for('detail', title = post.title) }}">
+                detail
+            </a>
+        </td>
+        {% if post.author.nickname == g.user.nickname %}
+        <td width="70px">
+            <a href="{{ url_for('del_blog', title = post.title) }}">
+                删除
+            </a>
+        </td>
+        {% endif %}
     </tr>
 </table>

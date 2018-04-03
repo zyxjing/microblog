@@ -47,21 +47,6 @@ def login():
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
 
-#@app.route('/login', methods=['GET', 'POST'])
-#@oid.loginhandler
-#def login():
-    #if g.user is not None and g.user.is_authenticated:
-        #return redirect(url_for('index'))
-    #form = LoginForm()
-    #if form.validate_on_submit():
-        #session['remember_me'] = form.remember_me.data
-        #return oid.try_login(form.openid.data, ask_for=['nickname', 'email'])
-    #else:
-        #return render_template('login.html',
-                           #title='Sign In',
-                           #form=form,
-                           #providers=app.config['OPENID_PROVIDERS'])
-
 @oid.after_login
 def after_login(resp):
     '''
@@ -116,7 +101,7 @@ def load_user(id):
 def index(page = 1):
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(body = form.post.data, timestamp = datetime.utcnow(), author = g.user)
+        post = Post(title = form.title.data, body = form.post.data, timestamp = datetime.utcnow(), author = g.user)
         
         db.session.add(post)
         db.session.commit()
@@ -248,7 +233,7 @@ def blogs(page = 1):
 def followers(nickname):
     user = User.query.filter_by(nickname = nickname).first()
     followers = user.followers
-    return render_template('followers.html', followers =  followers)
+    return render_template('followers.html', nickname = nickname ,followers =  followers)
     
 @app.route('/search', methods = ['POST'])
 @login_required
@@ -262,7 +247,24 @@ def search():
 @login_required
 def search_results(query):
     results = Post.query.msearch(query, fields= ['body'], limit = 20)
-    print('搜索结果：',results)
+    #print('搜索结果：',results)
     return render_template('search_results.html',
         query = query,
         results = results) 
+
+@app.route('/del_blog/<title>')
+@login_required
+def del_blog(title):
+    results = Post.query.filter_by(title = title).first()
+    
+    db.session.delete(results)
+    db.session.commit()
+    
+    return redirect(url_for('user', nickname = g.user.nickname))
+
+@app.route('/detail/<title>')
+@login_required
+def detail(title):
+    post = Post.query.filter_by(title = title).first()
+    
+    return render_template('detail.html', post = post)

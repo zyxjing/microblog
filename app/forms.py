@@ -28,7 +28,8 @@ class EditForm(FlaskForm):
         return True    
     
 class PostForm(FlaskForm):
-    post = StringField('post', validators=[DataRequired()])
+    post = TextAreaField('post', validators=[Length(min=0, max=1000)])
+    title = StringField('title', validators=[DataRequired()])
     
 
 class SearchForm(FlaskForm):

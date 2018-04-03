@@ -1,0 +1,31 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block app_content %}
+    <table class="table table-hover">
+        <tr>
+            <td width="256px"><img src='{{post.author.avatar(128)}}'></td>
+            <td>
+                <h1>User: {{post.author.nickname}}</h1>
+                {% if post.author.about_me %}<p>{{post.author.about_me}}</p>{% endif %}
+                {% if post.author.last_seen %}<p><i>Last seen on: {{post.author.last_seen}}</i></p>{% endif %}
+                <p>
+                    <a href="{{url_for('followers', nickname = post.author.nickname)}}">{{post.author.followers.count()}} followers</a> |
+                    {% if post.author.id == g.user.id %}
+                        <a href="{{url_for('edit')}}">Edit your profile</a>
+                    {% elif g.user.is_following(post.author) %}
+                        <a href="{{url_for('unfollow',nickname = post.author.nickname)}}">Unfollow</a>
+                    {% else %}
+                        <a href="{{url_for('follow',nickname = post.author.nickname)}}">Follow</a>
+                    {% endif %}
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    
+    <b>{{post.title}}</b>
+    <br> <br> 
+    {{ post.body}}
+{% endblock %}

@@ -107,10 +107,11 @@ class Post(db.Model):
     '''
         用户编写的blog(id,body,timestamp,user_id)
     '''
-    __searchable__ = ['body']
+    __searchable__ = ['title', 'body']
     
     id = db.Column(db.Integer, primary_key = True)
-    body = db.Column(db.String(140))
+    title = db.Column(db.String(100))
+    body = db.Column(db.String(1000))
     timestamp = db.Column(db.DateTime)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     
