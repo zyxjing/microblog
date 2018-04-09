@@ -222,7 +222,7 @@ def unfollow(nickname):
 
 @app.route('/blogs')
 @app.route('/blogs/<int:page>')
-@login_required
+#@login_required
 def blogs(page = 1):
     posts = Post.all_blogs().paginate(page, POSTS_PER_PAGE, False)
     return render_template('blogs.html', posts = posts)
@@ -234,6 +234,14 @@ def followers(nickname):
     user = User.query.filter_by(nickname = nickname).first()
     followers = user.followers
     return render_template('followers.html', nickname = nickname ,followers =  followers)
+
+@app.route('/followed/<nickname>')
+@login_required
+def followed(nickname):
+    user = User.query.filter_by(nickname = nickname).first()
+    followed = user.followed
+    return render_template('followed.html', nickname = nickname ,followed =  followed)
+
     
 @app.route('/search', methods = ['POST'])
 @login_required
@@ -246,7 +254,7 @@ def search():
 @app.route('/search_results/<query>')
 @login_required
 def search_results(query):
-    results = Post.query.msearch(query, fields= ['body'], limit = 20)
+    results = Post.query.msearch(query, fields= ['title','body'], limit = 20)
     #print('搜索结果：',results)
     return render_template('search_results.html',
         query = query,

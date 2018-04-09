@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+<!-- 展示单个的post/blog内容 -->
+{% block app_content %}
+    <h1>{{nickname}}, this is your followed:</h1>
+    <hr>
+    {% for user in followed %}
+        <b><a href="{{ url_for('user', nickname = user.nickname, page = 1) }}">{{user.nickname}}</a></b>
+        <br>
+    {% endfor %}
+{% endblock %}
