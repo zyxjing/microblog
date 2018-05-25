@@ -7,12 +7,12 @@
         {{ wtf.quick_form(form) }}
     {% endif %}
     
-    <b>Your blogs and your followers's blogs：</b>
+    <b>Your followed's blogs：</b>
         
     {% if not posts.items %}
         <br>
-        you hava 0 blog and you have 0 followers! 
-        You can publish your first blog!
+        your followed hava 0 blog! 
+        You can first follow others user!
     {% endif %}
     
     {% for post in posts.items %}

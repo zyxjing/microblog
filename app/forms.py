@@ -1,11 +1,32 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,BooleanField,TextAreaField
-from wtforms.validators import DataRequired,Length
+from wtforms import StringField,BooleanField,TextAreaField,PasswordField,SubmitField
+from wtforms.validators import DataRequired,Length,EqualTo,ValidationError
 from app.models import User
 
+
+class RegistrationForm(FlaskForm):
+    username = StringField('username',validators=[DataRequired()])
+    email = StringField('email', validators=[DataRequired()])
+    password = PasswordField('password', validators=[DataRequired()])
+    password2 = PasswordField('repeat Password', validators=[DataRequired(),EqualTo('password')])
+    submit = SubmitField('Register')
+    
+    def validate_username(self, username):
+        user = User.query.filter_by(nickname = username.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different username.')
+        
+    def validate_email(self, email):
+        user = User.query.filter_by(email = email.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different email address.')
+
 class LoginForm(FlaskForm):
-    openid = StringField('openid', validators=[DataRequired()])
+    #openid = StringField('openid', validators=[DataRequired()])
+    username = StringField('username', validators=[DataRequired()])
+    password = PasswordField('password', validators=[DataRequired()])
     remember_me = BooleanField('remember_me', default=False)
+    submit = SubmitField('Sign In')
     
     
 class EditForm(FlaskForm):

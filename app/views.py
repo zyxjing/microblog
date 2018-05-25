@@ -1,14 +1,14 @@
 from flask import render_template, flash, redirect, session, url_for, request, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, oid, search 
-from .forms import LoginForm,EditForm,PostForm,SearchForm
+from .forms import LoginForm,EditForm,PostForm,SearchForm,RegistrationForm
 from .models import User,Post
 from datetime import datetime
 from config import POSTS_PER_PAGE
 from config import MAX_SEARCH_RESULTS
 #from .emails import follower_notification
 from .email import follower_notification
-
+from werkzeug.urls import url_parse
 # index view function suppressed for brevity
 
 @app.errorhandler(404)
@@ -32,61 +32,89 @@ def before_request():
         
         g.search_form = SearchForm()
 
+@app.route('/register', methods=['GET','POST'])
+def register():
+    if g.user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(nickname = form.username.data, email = form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title = 'Register', form = form)
+
 @app.route('/login', methods=['GET', 'POST'])
-@oid.loginhandler
+#@oid.loginhandler
 def login():
     if g.user is not None and g.user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
-        session['remember_me'] = form.remember_me.data
-        return oid.try_login(form.openid.data, ask_for=['nickname', 'email'])
+        #print('form检验通过')
+        #session['remember_me'] = form.remember_me.data
+        user = User.query.filter_by(nickname = form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user,remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('index')
+        #return oid.try_login(form.openid.data, ask_for=['nickname', 'email'])
+        return redirect(next_page)
     else:
+        #return render_template('login.html',
+                                   #title='Sign In',
+                               #form=form,
+                               #providers=app.config['OPENID_PROVIDERS'])   
+        print('from校验失败')
         return render_template('login.html',
                            title='Sign In',
-                           form=form,
-                           providers=app.config['OPENID_PROVIDERS'])
+                           form=form)
 
-@oid.after_login
-def after_login(resp):
-    '''
-    未解决问题：认证失败，么有提示语显示
-    '''    
-    print (u'经历过了认证过程...')
-    print (resp.email)
-    if resp.email is None or resp.email == "":
-        print (u'认证失败了')
-        flash('Invalid login. Please try again.')
-        return redirect(url_for('login'))
+#@oid.after_login
+#def after_login(resp):
+    #'''
+    #未解决问题：认证失败，么有提示语显示
+    #'''    
+    #print (u'经历过了认证过程...')
+    #print (resp.email)
+    #if resp.email is None or resp.email == "":
+        #print (u'认证失败了')
+        #flash('Invalid login. Please try again.')
+        #return redirect(url_for('login'))
     
-    user = User.query.filter_by(email=resp.email).first()
+    #user = User.query.filter_by(email=resp.email).first()
     
-    if user is None:
-        nickname = resp.nickname
-        if nickname is None or nickname == "":
-            nickname = resp.email.split('@')[0]
+    #if user is None:
+        #nickname = resp.nickname
+        #if nickname is None or nickname == "":
+            #nickname = resp.email.split('@')[0]
         
-        nickname = User.make_unique_nickname(nickname)
+        #nickname = User.make_unique_nickname(nickname)
         
-        user = User(nickname=nickname, email=resp.email)
-        db.session.add(user)
-        db.session.commit()
+        #user = User(nickname=nickname, email=resp.email)
+        #db.session.add(user)
+        #db.session.commit()
         
-        #make the user follow him/herself
-        user.follow(user)
+        ##make the user follow him/herself
+        #user.follow(user)
         
-        db.session.add(user)
-        db.session.commit()
+        #db.session.add(user)
+        #db.session.commit()
         
-    remember_me = False
-    if 'remember_me' in session:
-        remember_me = session['remember_me']
-        session.pop('remember_me', None)
-    login_user(user, remember = remember_me)
+    #remember_me = False
+    #if 'remember_me' in session:
+        #remember_me = session['remember_me']
+        #session.pop('remember_me', None)
+    #login_user(user, remember = remember_me)
     
-    flash(u'Successfully signed in')
-    g.user =  user
-    return redirect(request.args.get('next') or url_for('index'))
+    #flash(u'Successfully signed in')
+    #g.user =  user
+    #return redirect(request.args.get('next') or url_for('index'))
 
 
 @lm.user_loader
@@ -126,8 +154,8 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/user/<nickname>')
-@app.route('/user/<nickname>/<int:page>')
+@app.route('/user/<nickname>', methods = ['GET'])
+@app.route('/user/<nickname>/<int:page>', methods = ['GET'])
 @login_required
 def user(nickname, page = 1):
     '''

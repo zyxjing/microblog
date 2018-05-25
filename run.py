@@ -9,4 +9,4 @@
 在 Windows 上不再需要指明文件是否可执行。相反你必须运行该脚本作为 Python 解释器的一个参数:
 '''
 from app import app
-app.run(debug=False)
+app.run(debug=False,port = 5000)

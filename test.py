@@ -128,4 +128,4 @@ class  TestCase(unittest.TestCase):
         assert f4 == [p4]
         
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main
