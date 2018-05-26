@@ -1,1 +1,1 @@
-LICENSE travis-ci coveralls pypi version pyversions
+https://travis-ci.org/zyxjing/microblog.svg?branch=master
