@@ -6,3 +6,10 @@ script:
 addons:
     apt:
       update: true
+notifications:
+  email:
+    recipients:
+      - 13672451429@163.com
+      - 845722463@qq.com
+    on_success: change # default: change
+    on_failure: always # default: always
