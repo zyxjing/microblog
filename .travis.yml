@@ -1,11 +1,24 @@
 language: python
+
 python:
   - "3.6"
+  
 script:
   - python -m unittest discover
-addons:
-    apt:
-      update: true
+  
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "${U_NAME}"
+  - git config user.email "${U_EMAIL}"
+  - git add .
+  - git commit -m "Update microblog"
+  - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:${P_BRANCH}
+     
+branches:
+  only:
+    - master     
+    
 notifications:
   email:
     recipients:
@@ -13,3 +26,12 @@ notifications:
       - 845722463@qq.com
     on_success: change # default: change
     on_failure: always # default: always
+ 
+env:
+  global:
+    # 我将其添加到了travis-ci的环境变量中
+  
+addons:
+  apt:
+    update: true
+      
