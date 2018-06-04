@@ -2,9 +2,13 @@ language: python
 
 python:
   - "3.6"
-  
+
+install:
+  - pip install -r requirements.txt
+  - pip install coverage
+  - pip install coveralls
 script:
-  - python -m unittest discover
+  - coverage run --source=. -m unittest discover
 
 branches:
   only:
@@ -18,7 +22,10 @@ after_script:
   - git add .
   - git commit -m "Update microblog"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:${P_BRANCH} 
-    
+
+after_success:
+  - coveralls
+  
 notifications:
   email:
     recipients:
