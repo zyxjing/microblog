@@ -1,5 +1,2 @@
 [![Build Status](https://travis-ci.org/zyxjing/microblog.svg?branch=master)](https://travis-ci.org/zyxjing/microblog)
-
-microblo readme.md文档内容
-
-#测试数据
+[![Coverage Status](https://coveralls.io/repos/github/zyxjing/microblog/badge.svg?branch=master)](https://coveralls.io/github/zyxjing/microblog?branch=master) 
