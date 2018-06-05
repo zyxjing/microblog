@@ -3399,3 +3399,7 @@ Traceback (most recent call last):
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user [SQL: 'SELECT user.id AS user_id, user.nickname AS user_nickname, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user \nWHERE user.nickname = ?\n LIMIT ? OFFSET ?'] [parameters: ('zyx', 1, 0)] (Background on this error at: http://sqlalche.me/e/e3q8)
 2018-05-25 17:34:46,616 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
 2018-05-25 17:34:51,477 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
+2018-06-04 14:25:38,867 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
+2018-06-04 14:25:38,987 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
+2018-06-04 14:25:38,987 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
+2018-06-04 14:29:24,637 INFO: microblog startup [in F:\microblog\app\__init__.py:39]
